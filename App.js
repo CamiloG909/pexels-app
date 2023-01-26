@@ -39,9 +39,29 @@ export default function App() {
 						},
 					}}
 				>
-					{(props) => <HomeScreen {...props} showSearch={showSearch} />}
+					{(props) => (
+						<HomeScreen
+							{...props}
+							showSearch={showSearch}
+							setShowSearch={setShowSearch}
+						/>
+					)}
 				</Stack.Screen>
-				<Stack.Screen name="ImageScreen" component={ImageScreen} />
+				<Stack.Screen
+					name="ImageScreen"
+					options={{
+						title: "Details",
+						headerTitleStyle: {
+							fontWeight: "500",
+							color: "white",
+						},
+						headerTintColor: "#fff",
+						headerStyle: {
+							backgroundColor: "#2B2B2B",
+						},
+					}}
+					component={ImageScreen}
+				/>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
